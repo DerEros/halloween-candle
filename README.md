@@ -12,6 +12,7 @@ In order to build this little tool, some preparation steps are required.
 ```git clone https://github.com/damellis/attiny/ ~/Arduino/hardware/attiny/avr```
 
 1. Adjust the ISP type in the Makefile if it's not usbasp
+1. Install FastLED using the Arduino IDE library manager
 
 ## Set Clock Speed
 
