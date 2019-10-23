@@ -18,13 +18,17 @@ In order to build this little tool, some preparation steps are required.
 By default, the ATTiny85 runs at 1 MHz. This code is created for 16 MHz speed.
 To change the clock speed, use
 
-```sudo avrdude -q -p attiny85 -c usbasp-clone -b 19200 -Uefuse:w:0xFF:m
--Uhfuse:w:0xDF:m -Ulfuse:w:0xF1:m```
+```
+sudo avrdude -q -p attiny85 -c usbasp-clone -b 19200 -Uefuse:w:0xFF:m
+-Uhfuse:w:0xDF:m -Ulfuse:w:0xF1:m
+```
 
 ## Uploading the Build Result
 
 At the moment `make upload` is not yet working. Instead, use `avrdude`
 directly.
 
-```sudo avrdude -q -p attiny85 -c usbasp-clone -b 19200 -U
-flash:w:build-ATtinyX5-attiny85/halloween-candle.hex:i```
+```
+sudo avrdude -q -p attiny85 -c usbasp-clone -b 19200 -U
+flash:w:build-ATtinyX5-attiny85/halloween-candle.hex:i
+```
