@@ -1,19 +1,25 @@
 #include <FastLED.h>
 
+#include "global.h"
+#include "NormalAnimation.h"
+
 #define LED_PIN 3
 #define NUM_PIXELS 3
 
 CRGB pixels[NUM_PIXELS];
+NormalAnimation normalAnimation(pixels, NUM_PIXELS);
+
+Millis lastMillis;
 
 void setup() {
     FastLED.addLeds<NEOPIXEL, LED_PIN>(pixels, NUM_PIXELS);
+    lastMillis = millis();
 }
 
 void loop() {
-    pixels[0] = CRGB::Red;
-    FastLED.show();
-    delay(500);
-    pixels[0] = CRGB::Black;
-    FastLED.show();
-    delay(500);
+    Millis currentTime = millis();
+    normalAnimation.animate(currentTime - lastMillis);
+
+    lastMillis = currentTime;
+    delay(10);
 }
