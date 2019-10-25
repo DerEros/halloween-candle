@@ -5,7 +5,9 @@
 
 class AbstractFrameAnimation : public IAnimation {
     public:
-        AbstractFrameAnimation(Millis timePerFrameMillis) : _timePerFrameMillis(timePerFrameMillis) {}
+        AbstractFrameAnimation(Fps fps) {
+            _timePerFrameMillis = 1000 / fps;
+        }
 
         virtual void animate(Millis elapseMillis);
 
