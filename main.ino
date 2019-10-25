@@ -1,6 +1,7 @@
 #include <FastLED.h>
 
 #include "global.h"
+#include "Config.h"
 #include "NormalAnimation.h"
 #include "SpookyAnimation.h"
 
