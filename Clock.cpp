@@ -3,7 +3,7 @@
 #include <Arduino.h>
 
 Clock::Clock() {
-    reset();
+    this->reset();
 }
 
 void Clock::reset() {
