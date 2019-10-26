@@ -8,9 +8,13 @@ class Clock {
         Clock();
 
         void reset();
+        Millis getStartTime();
         Millis startLap();
         Millis getLastLapTime();
         Millis getTimeSinceStart();
+        Millis getCurrentTime();
+
+        Millis getTimeSince(Millis sinceTime);
 
     private:
         Millis _startTime;

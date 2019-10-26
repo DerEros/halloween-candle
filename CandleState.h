@@ -17,11 +17,19 @@ class CandleState {
             _config(config)
         {}
 
-        State nextState();
+        State nextState(CandleState::State lastState);
 
     private:
         Clock& _clock;
         Config& _config;
+
+        bool isSpookyTime();
+        bool isMegaSpookyTime();
+
+        Millis _spookStartTime;
+        CandleState::State handleNormalState();
+        CandleState::State handleSpookState();
+        CandleState::State handleMegaSpookState();
 };
 
 #endif
