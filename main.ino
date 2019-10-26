@@ -13,6 +13,7 @@
 Clock clock;
 Config config;
 CandleState state(config, clock);
+CandleState::State currentState = CandleState::NORMAL;
 
 CRGB pixels[NUM_PIXELS];
 NormalAnimation normalAnimation(pixels, NUM_PIXELS, ANIMATION_FPS);
@@ -25,7 +26,19 @@ void setup() {
 
 void loop() {
     clock.startLap();
-    normalAnimation.animate(clock.getLastLapTime());
+
+    currentState = state.nextState(currentState);
+
+    switch (currentState) {
+        case CandleState::SPOOK:
+        case CandleState::MEGA_SPOOK:
+            spookyAnimation.animate(clock.getLastLapTime());
+            break;
+        default:
+        case CandleState::NORMAL:
+            normalAnimation.animate(clock.getLastLapTime());
+            break;
+    }
 
     delay(10);
 }

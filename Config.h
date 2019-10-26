@@ -14,7 +14,7 @@ struct Config {
         spookProbability = 0.01;
         spookLength = 500;
 
-        megaSpookWaitTime = 3600 * 1000;
+        megaSpookWaitTime = 3600L * 1000L;
         megaSpookLength = 2000;
     }
 };

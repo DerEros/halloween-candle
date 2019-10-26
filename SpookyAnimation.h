@@ -5,7 +5,7 @@
 
 #include "AbstractFrameAnimation.h"
 
-class SpookyAnimation : AbstractFrameAnimation {
+class SpookyAnimation : public AbstractFrameAnimation {
     public:
         SpookyAnimation(CRGB pixels[], unsigned int numPixels, Fps fps) :
             AbstractFrameAnimation(fps), _pixels(pixels), _numPixels(numPixels)
@@ -17,4 +17,5 @@ class SpookyAnimation : AbstractFrameAnimation {
 
         virtual void handleFrameSwitch();
 };
+
 #endif
