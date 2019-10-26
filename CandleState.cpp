@@ -44,7 +44,8 @@ CandleState::State CandleState::handleMegaSpookState() {
 }
 
 bool CandleState::isSpookyTime() {
-    unsigned int pivotPoint = 65536 * _config.spookProbability;
+    float probabilityByTime = _config.spookProbability * (_clock.getLastLapTime() / 1000.0);
+    unsigned int pivotPoint = 65536 * probabilityByTime;
     return random16() < pivotPoint;
 }
 
