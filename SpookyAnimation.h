@@ -15,6 +15,8 @@ class SpookyAnimation : public AbstractFrameAnimation {
         CRGB *_pixels;
         unsigned int _numPixels;
 
+        bool on = true;
+
         virtual void handleFrameSwitch();
 };
 
