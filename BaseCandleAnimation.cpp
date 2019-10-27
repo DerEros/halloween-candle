@@ -33,6 +33,6 @@ void BaseCandleAnimation::flicker() {
 
 void BaseCandleAnimation::renderPixels() {
     for (int i = 0; i < _numPixels; i++) {
-        _pixels[i] = ColorFromPalette(_palette, _paletteIndicies[i]);
+        _pixels[i] = ColorFromPalette(_palette, _paletteIndicies[i] % 32);
     }
 }
