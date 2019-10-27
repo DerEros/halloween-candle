@@ -8,7 +8,8 @@
 
 #define LED_PIN 3
 #define NUM_PIXELS 3
-#define ANIMATION_FPS 10
+#define ANIMATION_FPS 25
+#define SPOOKY_ANIMATION_FPS 50
 
 Clock clock;
 Config config;
@@ -17,7 +18,7 @@ CandleState::State currentState = CandleState::NORMAL;
 
 CRGB pixels[NUM_PIXELS];
 NormalAnimation normalAnimation(pixels, NUM_PIXELS, ANIMATION_FPS);
-SpookyAnimation spookyAnimation(pixels, NUM_PIXELS, ANIMATION_FPS);
+SpookyAnimation spookyAnimation(pixels, NUM_PIXELS, SPOOKY_ANIMATION_FPS);
 
 void setup() {
     FastLED.addLeds<NEOPIXEL, LED_PIN>(pixels, NUM_PIXELS);

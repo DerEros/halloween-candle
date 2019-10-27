@@ -3,21 +3,13 @@
 
 #include <FastLED.h>
 
-#include "AbstractFrameAnimation.h"
+#include "BaseCandleAnimation.h"
 
-class SpookyAnimation : public AbstractFrameAnimation {
+class SpookyAnimation : public BaseCandleAnimation {
     public:
-        SpookyAnimation(CRGB pixels[], unsigned int numPixels, Fps fps) :
-            AbstractFrameAnimation(fps), _pixels(pixels), _numPixels(numPixels)
-        {}
+        SpookyAnimation(CRGB pixels[], unsigned int numPixels, Fps fps); 
 
     private:
-        CRGB *_pixels;
-        unsigned int _numPixels;
-
-        bool on = true;
-
-        virtual void handleFrameSwitch();
 };
 
 #endif
