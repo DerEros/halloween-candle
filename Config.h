@@ -11,7 +11,7 @@ struct Config {
     Millis megaSpookLength;
 
     Config() {
-        spookProbability = 0.001;
+        spookProbability = 0.01;
         spookLength = 500;
 
         megaSpookWaitTime = 3600L * 1000L;
